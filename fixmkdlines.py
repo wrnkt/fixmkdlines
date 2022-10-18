@@ -11,17 +11,17 @@ def create_parser():
     return parser
 
 def edit_file(path):
-    insert_string = "__" # set to "__" for visual testing purposes
+    insert_string = "  " # set to "__" for visual testing purposes
     edited_file = ""
     file = open(path, 'r')
     for line in file:
         while line[-1:] == "\n" or line[-1:] == " ":
-            print("removing")
+            # print("removing")
             line = line[:-1]
         line += insert_string
         edited_file += line + "\n"
 
-    print(edited_file)
+    # print(edited_file)
 
     file = open(path, 'w')
     file.writelines(edited_file)
