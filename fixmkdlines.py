@@ -10,9 +10,27 @@ def create_parser():
             markdown file.')
     return parser
 
+def edit_file(path):
+    insert_string = "__" # set to "__" for visual testing purposes
+    edited_file = ""
+    file = open(path, 'r')
+    for line in file:
+        while line[-1:] == "\n" or line[-1:] == " ":
+            print("removing")
+            line = line[:-1]
+        line += insert_string
+        edited_file += line + "\n"
+
+    print(edited_file)
+
+    file = open(path, 'w')
+    file.writelines(edited_file)
+    file.close()
+
 if __name__ == "__main__":
     arg_parser = create_parser()
     parsed_args = arg_parser.parse_args(sys.argv[1:])
     if os.path.exists(parsed_args.file_path):
-        print("File exists")
+       edit_file(parsed_args.file_path) 
+        
 
