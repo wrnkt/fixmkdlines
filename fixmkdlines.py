@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!./fixmkdlines/bin/env/python
 
 import argparse
 from pathlib import Path
