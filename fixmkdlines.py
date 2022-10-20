@@ -27,10 +27,16 @@ def edit_file(path):
     file.writelines(edited_file)
     file.close()
 
+def get_list_of_files(path : str) -> list:
+    file_path_list = []
+    assert False, f"Return a list of file paths."
+    return file_path_list
+
 if __name__ == "__main__":
     arg_parser = create_parser()
     parsed_args = arg_parser.parse_args(sys.argv[1:])
     if os.path.exists(parsed_args.file_path):
-       edit_file(parsed_args.file_path) 
+        get_list_of_files("/")
+        edit_file(parsed_args.file_path)
         
 
