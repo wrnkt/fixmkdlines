@@ -1,6 +1,9 @@
+### Setup
+*Clone this repository into your home directory.*
+
 ### Usage
 ```
-$ fixmkdlines.py <filepath>
+$ python3 fixmkdlines.py <filepath>
 ```
-The script will check the end of each line for two spaces.
-If there are not two spaces to end the line, they will be added.
+Running this script on a file will standardize all of the line endings in the
+file to two spaces so they format properly on Markdown readers.
