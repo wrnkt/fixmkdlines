@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import argparse
 from pathlib import Path
 import sys
@@ -36,7 +38,7 @@ if __name__ == "__main__":
     arg_parser = create_parser()
     parsed_args = arg_parser.parse_args(sys.argv[1:])
     if os.path.exists(parsed_args.file_path):
-        get_list_of_files("/")
+        #get_list_of_file("/")
         edit_file(parsed_args.file_path)
         
 
