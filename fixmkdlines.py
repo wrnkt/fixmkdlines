@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import argparse
+from os import walk
 from pathlib import Path
 import sys
 import os
@@ -30,14 +31,18 @@ def edit_file(path):
 
 def get_list_of_files(path : str) -> list:
     file_path_list = []
-    assert False, f"Return a list of file paths."
+    for (dirpath, dirnames, filenames) in os.walk(path):
+        file_path_list.extend(filenames)
+    #print(l) for l in file_path_list.split()
+    # print(file_path_list)
+    assert False, f"TODO: Given a directory, return a list of file paths."
     return file_path_list
 
 if __name__ == "__main__":
     arg_parser = create_parser()
     parsed_args = arg_parser.parse_args(sys.argv[1:])
     if os.path.exists(parsed_args.file_path):
-        #get_list_of_file("/")
+        # get_list_of_files("./../")
         edit_file(parsed_args.file_path)
         
 
